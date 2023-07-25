@@ -27,7 +27,7 @@ export default function MainMenu() {
 				aria-expanded={open ? "true" : undefined}
 				onClick={handleClick}
 			>
-				<MoreVertIcon />
+				<MoreVertIcon className="more-icon" />
 			</div>
 			<Menu
 				id="basic-menu"
@@ -52,12 +52,3 @@ export default function MainMenu() {
 		</div>
 	);
 }
-
-/* const HelpMenu = () => {
-	return (
-		<div className="menu-list">
-			<HelpOutlineRoundedIcon className="menu-icon" />
-			<p>Help</p>
-		</div>
-	);
-}; */

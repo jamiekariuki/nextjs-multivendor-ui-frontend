@@ -1,1 +1,22 @@
+.menu {
+	#basic-button {
+		color: rgb(26, 26, 26);
+		width: 20px !important;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
 
+.menu-list {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	color: rgb(38, 38, 38);
+
+	.menu-icon {
+		color: rgb(38, 38, 38);
+	}
+}

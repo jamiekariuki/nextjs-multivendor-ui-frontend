@@ -1,0 +1,101 @@
+//color peletes
+$main: #b12f9c;
+//light mode
+//background
+$lightBackround: #fdfdfd;
+$softLightBackground: #cccccc;
+//text
+$pLight: rgb(0, 0, 0);
+$pSoftLight: rgb(40, 40, 40);
+$titlesLight: black;
+$titleSoftLight: rgb(40, 40, 40);
+//borders
+$lightBorder: rgba(109, 109, 109, 0.676); //will be used as hover too
+
+//dark mode
+//backgrounds
+$darkBackround: #151515;
+$softDarkBackground: #3d3d3d;
+//text
+$pDark: rgb(255, 255, 255);
+$pSoftDark: rgb(196, 196, 196);
+$titlesDark: rgb(255, 255, 255);
+$titleSoftDark: rgb(196, 196, 196);
+//borders
+$darkBorder: rgba(173, 173, 173, 0.628); //will be used as hover too
+
+$themes: (
+	light: (
+		paragraphColor: $pLight,
+		softParagraphColor: $pSoftLight,
+
+		titleColor: $titlesLight,
+		softTitleColor: $titleSoftLight,
+
+		background: $lightBackround,
+		softBackground: $softLightBackground,
+
+		border: $lightBorder,
+
+		icon: rgb(52, 52, 52),
+	),
+	dark: (
+		paragraphColor: $pDark,
+		softParagraphColor: $pSoftDark,
+
+		titleColor: $titlesDark,
+		softTitleColor: $titleSoftDark,
+
+		background: $darkBackround,
+		softBackground: $softDarkBackground,
+
+		border: $darkBorder,
+
+		icon: rgb(236, 236, 236),
+	),
+);
+
+@mixin themify($themes) {
+	@each $theme, $map in $themes {
+		.theme-#{$theme} & {
+			$theme-map: () !global;
+			@each $key, $submap in $map {
+				$value: map-get(map-get($themes, $theme), "#{$key}");
+				$theme-map: map-merge(
+					$theme-map,
+					(
+						$key: $value,
+					)
+				) !global;
+			}
+			@content;
+			$theme-map: null !global;
+		}
+	}
+}
+
+@function themed($key) {
+	@return map-get($theme-map, $key);
+}
+
+/* 
+.tag {
+	position: absolute;
+	bottom: -20px;
+	left: -70%;
+	color: themed("softBackground");
+	height: 15px;
+	width: 80px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	background-color: themed("softParagraphColor");
+	z-index: 50;
+	transition: 1s;
+
+	p {
+		font-size: 10px;
+		font-family: sans-serif;
+	}
+} */

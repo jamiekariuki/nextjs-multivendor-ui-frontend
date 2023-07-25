@@ -1,0 +1,21 @@
+@import "../../../../theme/theme.scss";
+
+.mode {
+	.dark {
+		display: flex;
+		gap: 5px;
+		color: $pLight;
+		.dark-icon {
+			color: rgb(59, 62, 93);
+		}
+	}
+
+	.light {
+		display: flex;
+		gap: 5px;
+		color: $pDark;
+		.light-icon {
+			color: rgb(255, 224, 21);
+		}
+	}
+}

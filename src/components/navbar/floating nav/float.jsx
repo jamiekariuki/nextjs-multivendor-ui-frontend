@@ -62,7 +62,6 @@ export const Float = () => {
 										<a href={subItem.link}>
 											<p>{subItem.title}</p>
 										</a>
-										<h5></h5>
 									</div>
 								))}
 							</div>

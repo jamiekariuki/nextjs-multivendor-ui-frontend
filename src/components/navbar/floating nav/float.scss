@@ -6,7 +6,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		border-top: 1px solid rgba(0, 0, 0, 0.253);
+		border-top: 1px solid themed("border");
+
+		@media (max-width: 650px) {
+			display: none;
+		}
 
 		.floating {
 			font-family: sans-serif;
@@ -28,7 +32,7 @@
 					align-items: center;
 
 					&:hover {
-						color: rgb(189, 16, 219);
+						color: $main;
 					}
 
 					.arrow-icon {
@@ -38,7 +42,7 @@
 			}
 
 			.float-container {
-				border-top: 1px solid rgba(0, 0, 0, 0.253);
+				border-top: 1px solid themed("border");
 				padding: 10px 30px;
 				padding-right: 50%;
 				position: absolute;
@@ -99,10 +103,20 @@
 					}
 				}
 
+				.float-map {
+					margin: 2px 0;
+
+					&:hover {
+						text-decoration: underline;
+						color: $main;
+					}
+				}
+
 				p {
 					font-size: 13px;
-					margin: 2px 0;
+
 					display: inline;
+					transition: all 0.2s;
 				}
 			}
 		}

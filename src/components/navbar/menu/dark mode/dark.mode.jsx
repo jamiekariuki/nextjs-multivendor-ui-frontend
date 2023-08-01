@@ -12,12 +12,12 @@ export const Mode = () => {
 			{!darkMode ? (
 				<div className="dark">
 					<DarkModeIcon className="dark-icon" />
-					<p>Dark mode</p>
+					<h6>Dark mode</h6>
 				</div>
 			) : (
 				<div className="light">
 					<LightModeIcon className="light-icon" />
-					<p>light mode</p>
+					<h6>light mode</h6>
 				</div>
 			)}
 		</div>

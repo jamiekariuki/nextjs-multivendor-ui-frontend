@@ -1,4 +1,8 @@
 .menu {
+	@media (max-width: 500px) {
+		display: none;
+	}
+
 	#basic-button {
 		color: rgb(26, 26, 26);
 		width: 20px !important;

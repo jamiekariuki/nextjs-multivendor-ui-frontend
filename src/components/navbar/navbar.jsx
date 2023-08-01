@@ -2,19 +2,42 @@
 import React from "react";
 import "./navbar.scss";
 import { useState } from "react";
-import { CartBadge, NotificationBadge, MessageBadge } from "./badge/badge";
+//import { CartBadge, NotificationBadge, MessageBadge } from "./badge/badge";
 import { Float } from "./floating nav/float";
-import MainMenu from "./menu/menu";
+//import MainMenu from "./menu/menu";
 import { TfiSearch } from "react-icons/tfi";
-import { AccountSettings } from "./account settings/account.settings";
+//import { AccountSettings } from "./account settings/account.settings";
+import { SlMenu } from "react-icons/sl";
+//import { SideBar } from "./side bar/side.bar";
 
 export const Navbar = () => {
 	const [user, setuser] = useState(false);
 
+	const [sideBar, setSideBar] = useState(false);
+
 	return (
 		<nav>
+			{/* <SideBar sideBar={sideBar} setSideBar={setSideBar} /> */}
+			<div
+				className={
+					sideBar
+						? "side-bar-background side-bar-background-open"
+						: "side-bar-background"
+				}
+				onClick={() => {
+					setSideBar(!sideBar);
+				}}
+			/>
 			<div className="container">
 				<div className="left">
+					<div
+						className="mobile-nav"
+						onClick={() => {
+							setSideBar(!sideBar);
+						}}
+					>
+						<SlMenu className="menu-icon" />
+					</div>
 					<div className="logo">
 						<h1>mart</h1>
 					</div>
@@ -33,7 +56,7 @@ export const Navbar = () => {
 					</div>
 				</div>
 				<div className="right">
-					<CartBadge />
+					{/* <CartBadge /> */}
 
 					{user ? (
 						<div className="user-links">
@@ -42,13 +65,20 @@ export const Navbar = () => {
 						</div>
 					) : (
 						<div className="profile-container">
-							<MessageBadge />
-							<NotificationBadge />
-							<AccountSettings />
+							{/*<div className="badges">
+								<MessageBadge />
+							</div>
+
+							<div className="badges">
+								<NotificationBadge />
+							</div>
+*/}
+							{/* <AccountSettings /> */}
+							nav
 						</div>
 					)}
 
-					<MainMenu />
+					{/* <MainMenu /> */}
 				</div>
 			</div>
 			<Float />

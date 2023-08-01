@@ -1,7 +1,13 @@
+import { AiOutlineFileProtect } from "react-icons/ai";
+import { BsShopWindow } from "react-icons/bs";
+import { IoPersonOutline } from "react-icons/io5";
+import { LiaBusinessTimeSolid } from "react-icons/lia";
+
 export const floatData = [
 	{
 		title: "Escrow",
 		pic: "https://i.postimg.cc/YqfL9YXY/escrow.jpg",
+		icon: AiOutlineFileProtect,
 		list: [
 			{
 				link: "/escrow",
@@ -20,7 +26,16 @@ export const floatData = [
 	{
 		title: "Shops",
 		pic: "https://i.postimg.cc/Y0ccJ4YC/shop.jpg",
+		icon: BsShopWindow,
 		list: [
+			{
+				link: "/shops",
+				title: "All",
+			},
+			{
+				link: "/shops",
+				title: "Near you",
+			},
 			{
 				link: "/electronics",
 				title: "Electronics",
@@ -45,7 +60,7 @@ export const floatData = [
 
 			{
 				link: "/beauty-personal-care",
-				title: "Beauty and personal care",
+				title: "Beauty & personal care",
 			},
 			{
 				link: "/fashion",
@@ -60,16 +75,16 @@ export const floatData = [
 				title: "Home and Kitchen",
 			},
 			{
-				link: "/industrial-scientific",
-				title: "Industrial and Scientific",
+				link: "/industrial",
+				title: "Industrial",
 			},
 			{
 				link: "/luggage",
 				title: "Luggage",
 			},
 			{
-				link: "/movies-television",
-				title: "Movies & Television",
+				link: "/movies",
+				title: "Movies",
 			},
 			{
 				link: "/pet-supplies",
@@ -84,8 +99,8 @@ export const floatData = [
 				title: "Sports and Outdoors",
 			},
 			{
-				link: "/tools-home-improvement",
-				title: "Tools & Home Improvement",
+				link: "/tools",
+				title: "Tools",
 			},
 			{
 				link: "/toys-games",
@@ -96,8 +111,8 @@ export const floatData = [
 				title: "Video Games",
 			},
 			{
-				link: "/clothing-shoes-accessories",
-				title: "Clothing, Shoes & Accessories",
+				link: "/clothing",
+				title: "Clothing",
 			},
 			{
 				link: "/sporting-goods",
@@ -131,31 +146,36 @@ export const floatData = [
 				link: "/collectibles-art",
 				title: "Collectibles & Art",
 			},
-			{
-				link: "/books-movies-music",
-				title: "Books, Movies & Music",
-			},
 		],
 	},
 	{
 		title: "Freelancers",
 		pic: "https://i.postimg.cc/QxRY8LyH/freelancer.jpg",
+		icon: IoPersonOutline,
 		list: [
 			{
+				link: "/freelancers",
+				title: "All",
+			},
+			{
+				link: "/freelancers",
+				title: "Near you",
+			},
+			{
 				link: "/graphics-design",
-				title: "Graphics & Design",
+				title: "Graphics & Designers",
 			},
 			{
 				link: "/digital-marketing",
 				title: "Digital Marketing",
 			},
 			{
-				link: "/modelling",
-				title: "modelling",
+				link: "/modells",
+				title: "modells",
 			},
 			{
 				link: "/writing-translation",
-				title: "Writing & Translation",
+				title: "Writers & Translaters",
 			},
 			{
 				link: "/beauty-makeup",
@@ -175,7 +195,7 @@ export const floatData = [
 			},
 			{
 				link: "/photography",
-				title: "Photography",
+				title: "Photographers",
 			},
 			{
 				link: "/business",
@@ -190,14 +210,23 @@ export const floatData = [
 	{
 		title: "Services",
 		pic: "https://i.postimg.cc/65YRcCdw/service.jpg",
+		icon: LiaBusinessTimeSolid,
 		list: [
+			{
+				link: "/services",
+				title: "All",
+			},
+			{
+				link: "/services",
+				title: "Near you",
+			},
 			{
 				link: "/business-services",
 				title: "Business Services",
 			},
 			{
-				link: "/gym-fitness-services",
-				title: "Gym & Fitness Services",
+				link: "/gym-fitness",
+				title: "Gym & Fitness ",
 			},
 			{
 				link: "/legal-services",
@@ -205,7 +234,7 @@ export const floatData = [
 			},
 			{
 				link: "/miscellaneous-services",
-				title: "Miscellaneous Services",
+				title: "Miscellaneous ",
 			},
 			{
 				link: "/health-wellness",
@@ -234,6 +263,10 @@ export const floatData = [
 			{
 				link: "/printing-photocopy",
 				title: "Printing & Photocopy",
+			},
+			{
+				link: "/laundry",
+				title: "Laundry",
 			},
 			{
 				link: "/sales",

@@ -3,7 +3,7 @@ import { BsShopWindow } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
 
-export const floatData = [
+export const dropDownData = [
 	{
 		title: "Escrow",
 		pic: "https://i.postimg.cc/YqfL9YXY/escrow.jpg",

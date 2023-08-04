@@ -2,11 +2,11 @@
 import React from "react";
 import "./navbar.scss";
 import { useState } from "react";
-//import { CartBadge, NotificationBadge, MessageBadge } from "./badge/badge";
-import { Float } from "./floating nav/float";
+import { CartBadge, NotificationBadge, MessageBadge } from "./badge/badge";
+import { DropDown } from "./dropdown nav/dropdown";
 //import MainMenu from "./menu/menu";
 import { TfiSearch } from "react-icons/tfi";
-//import { AccountSettings } from "./account settings/account.settings";
+import { AccountSettings } from "./account settings/account.settings";
 import { SlMenu } from "react-icons/sl";
 //import { SideBar } from "./side bar/side.bar";
 
@@ -17,7 +17,7 @@ export const Navbar = () => {
 
 	return (
 		<nav>
-			{/* <SideBar sideBar={sideBar} setSideBar={setSideBar} /> */}
+			{/*<SideBar sideBar={sideBar} setSideBar={setSideBar} /> */}
 			<div
 				className={
 					sideBar
@@ -56,32 +56,33 @@ export const Navbar = () => {
 					</div>
 				</div>
 				<div className="right">
-					{/* <CartBadge /> */}
+					<CartBadge />
 
 					{user ? (
 						<div className="user-links">
-							<button className="login">login</button>
-							<button className="signup">sign up</button>
+							<button className="login">
+								<p>login</p>
+							</button>
+							<button className="signup">
+								<p>sign up</p>
+							</button>
 						</div>
 					) : (
 						<div className="profile-container">
-							{/*<div className="badges">
+							<div className="badges">
 								<MessageBadge />
 							</div>
-
 							<div className="badges">
 								<NotificationBadge />
 							</div>
-*/}
-							{/* <AccountSettings /> */}
-							nav
+							<AccountSettings />
 						</div>
 					)}
 
 					{/* <MainMenu /> */}
 				</div>
 			</div>
-			<Float />
+			<DropDown />
 		</nav>
 	);
 };

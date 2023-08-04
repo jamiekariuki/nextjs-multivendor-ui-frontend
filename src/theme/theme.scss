@@ -1,27 +1,31 @@
 //color peletes
 $main: #b12f9c;
-//light mode
+$mainLight: #c353b0;
+
 //background
+//light mode
 $lightBackround: #fdfdfd;
 $softLightBackground: #cccccc;
+//dark mode
+$darkBackround: #151515;
+$softDarkBackground: #3d3d3d;
+
 //text
+//light mode
 $pLight: rgb(0, 0, 0);
 $pSoftLight: rgb(40, 40, 40);
 $titlesLight: black;
 $titleSoftLight: rgb(40, 40, 40);
-//borders
-$lightBorder: rgba(109, 109, 109, 0.676); //will be used as hover too
-
 //dark mode
-//backgrounds
-$darkBackround: #151515;
-$softDarkBackground: #3d3d3d;
-//text
 $pDark: rgb(255, 255, 255);
 $pSoftDark: rgb(196, 196, 196);
 $titlesDark: rgb(255, 255, 255);
-$titleSoftDark: rgb(196, 196, 196);
+$titleSoftDark: rgb(217, 217, 217);
+
 //borders
+//light mode
+$lightBorder: rgba(109, 109, 109, 0.676); //will be used as hover too
+//dark mode
 $darkBorder: rgba(173, 173, 173, 0.628); //will be used as hover too
 
 $themes: (
@@ -40,6 +44,9 @@ $themes: (
 		icon: rgb(52, 52, 52),
 		shadow: rgba(31, 31, 31, 1),
 		hover: rgba(133, 133, 133, 0.171),
+		glass: rgba(255, 255, 255, 0.22),
+		//----filters
+		a2: rgba(251, 25, 236, 0.642),
 	),
 
 	dark: (
@@ -57,6 +64,9 @@ $themes: (
 		icon: rgb(236, 236, 236),
 		shadow: rgba(227, 227, 227, 0.309),
 		hover: rgba(133, 133, 133, 0.171),
+		glass: rgba(12, 12, 12, 0.22),
+		//----filters
+		a2: rgba(249, 38, 235, 0.468),
 	),
 );
 

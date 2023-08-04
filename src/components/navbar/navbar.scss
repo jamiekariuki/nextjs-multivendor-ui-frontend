@@ -3,6 +3,7 @@
 nav {
 	@include themify($themes) {
 		background-color: themed("background");
+		background-color: transparent;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -35,7 +36,7 @@ nav {
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			padding: 5px 20px;
+			padding: 5px 25px;
 
 			@media (max-width: 500px) {
 				padding: 4px 10px;
@@ -151,33 +152,40 @@ nav {
 
 				.user-links {
 					display: flex;
-					gap: 20px;
+					gap: 15px;
 
 					button {
 						width: 60px;
 						height: 28px;
 						cursor: pointer;
+					}
+
+					.p {
 						font-family: sans-serif;
-						font-weight: 00;
+						font-weight: 700;
 					}
 
 					.login {
 						background-color: transparent;
 						border: none;
+						transition: all 0.2s;
+						border: 1px solid transparent;
+						border-radius: 5px;
 
 						&:hover {
-							border-radius: 5px;
-							border: 1px solid rgba(147, 147, 147, 0.664);
+							border: 1px solid themed("border");
 						}
 					}
+
 					.signup {
 						border: none;
 						border-radius: 5px;
 						background-color: $main;
-						transition: 1s;
+						transition: 0.2s;
+						color: rgb(227, 227, 227);
 
 						&:hover {
-							background-color: $main;
+							background-color: $mainLight;
 						}
 					}
 				}

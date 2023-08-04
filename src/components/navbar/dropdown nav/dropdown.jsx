@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import "./float.scss";
-import { floatData } from "./float.data";
+import "./dropdown.scss";
+import { dropDownData } from "./dropdown.data";
 import Image from "next/image";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-export const Float = () => {
+export const DropDown = () => {
 	const [hoveredItem, setHoveredItem] = useState(null);
 
 	return (
@@ -22,7 +22,7 @@ export const Float = () => {
 					</div>
 				</div>
 
-				{floatData.map((item, index) => (
+				{dropDownData.map((item, index) => (
 					<div
 						key={index}
 						className="item-container"

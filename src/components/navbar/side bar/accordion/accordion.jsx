@@ -4,8 +4,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { floatData } from "../../floating nav/float.data";
 import "./accordion.scss";
+import { dropDownData } from "../../dropdown nav/dropdown.data";
 
 export const Platform = () => {
 	const [expanded, setExpanded] = React.useState(false);
@@ -15,7 +15,7 @@ export const Platform = () => {
 	};
 
 	return (
-		<div className="side-bar-accordion"> 
+		<div className="side-bar-accordion">
 			{floatData.map((item) => (
 				<Accordion
 					key={item.title}
@@ -41,9 +41,9 @@ export const Platform = () => {
 							{item.list.map((listItem) => (
 								<li key={listItem.title}>
 									{/* <a href={listItem.link}> */}
-										<div className="list-wrapper">
-											<p>{listItem.title}</p>
-										</div>
+									<div className="list-wrapper">
+										<p>{listItem.title}</p>
+									</div>
 									{/* </a> */}
 								</li>
 							))}

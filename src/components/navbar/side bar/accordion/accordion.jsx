@@ -16,7 +16,7 @@ export const Platform = () => {
 
 	return (
 		<div className="side-bar-accordion">
-			{floatData.map((item) => (
+			{dropDownData.map((item) => (
 				<Accordion
 					key={item.title}
 					expanded={expanded === `panel${item.title}`}

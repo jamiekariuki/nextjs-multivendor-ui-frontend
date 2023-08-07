@@ -1,0 +1,59 @@
+@import "./../../../../theme/theme.scss";
+
+.payment-tag {
+	@include themify($themes) {
+		margin-top: 100px;
+		margin-bottom: 100px;
+		//background-color: blanchedalmond;
+		.payment-tag-contaniner {
+			//	background-color: aqua;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+
+			h5 {
+				font-family: var(--font-poppins);
+				font-size: 16px;
+				color: themed("border");
+			}
+
+			.logo-wrapper {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				justify-content: space-evenly;
+				gap: 20px;
+				padding: 10px 0;
+
+				.logos-container {
+					position: relative;
+
+					.logo-picture {
+						object-fit: cover;
+					}
+				}
+
+				.mpesa {
+					height: 37px;
+					width: 78px;
+				}
+
+				.master-card {
+					height: 37px;
+					width: 66px;
+				}
+
+				.visa {
+					height: 18px;
+					width: 59px;
+				}
+
+				.paypal {
+					height: 30px;
+					width: 105px;
+				}
+			}
+		}
+	}
+}

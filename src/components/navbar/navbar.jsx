@@ -8,16 +8,16 @@ import { DropDown } from "./dropdown nav/dropdown";
 import { TfiSearch } from "react-icons/tfi";
 import { AccountSettings } from "./account settings/account.settings";
 import { SlMenu } from "react-icons/sl";
-//import { SideBar } from "./side bar/side.bar";
+import { SideBar } from "./side bar/side.bar";
 
 export const Navbar = () => {
-	const [user, setuser] = useState(false);
+	const [user, setuser] = useState(!false);
 
 	const [sideBar, setSideBar] = useState(false);
 
 	return (
 		<nav>
-			{/*<SideBar sideBar={sideBar} setSideBar={setSideBar} /> */}
+			<SideBar sideBar={sideBar} setSideBar={setSideBar} />
 			<div
 				className={
 					sideBar

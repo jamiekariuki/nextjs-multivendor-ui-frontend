@@ -3,429 +3,45 @@
 .hero {
 	@include themify($themes) {
 		height: 100vh;
+		width: 100vw;
 		position: relative;
+
+		.hero-wrapper {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			gap: 5%;
+
+			@media (max-width: 550px) {
+				justify-content: space-around;
+			}
+		}
 
 		.hero-background-container {
 			position: absolute;
 			top: 0;
-			right: 0;
 			left: 0;
+			right: 0;
 			bottom: 0;
-			z-index: 10;
+			z-index: 1;
 			//background-color: aqua;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
 
-			@media (max-width: 900px) {
-				display: none;
-			}
-
-			.hero-background-image {
-				position: absolute;
-				width: 610px;
-				border-radius: 0 0 200% 300%;
-				top: 50px;
-				right: 20px;
-				bottom: 3%;
-				overflow: hidden;
-				//	background-color: aquamarine;
-				display: flex;
-				align-items: flex-end;
-				justify-content: center;
-				z-index: 15;
-
-				@media (max-width: 1150px) {
-					width: 510px;
-				}
-
-				.hero-image-container {
-					//background-color: blueviolet;
-					height: 590px;
-					width: 620px;
-					position: relative;
-
-					@media (max-width: 1150px) {
-						height: 500px;
-						width: 550px;
-					}
-
-					.hero-image {
-						object-fit: cover;
-						object-position: 60% 10%;
-						z-index: 15;
-					}
-
-					.a1 {
-						position: absolute;
-						left: 60px;
-						right: 0;
-						top: 70px;
-						bottom: 0;
-
-						border-radius: 62% 38% 35% 65% / 62% 57% 43% 38%;
-						background: rgb(127, 46, 187);
-						background: radial-gradient(
-							circle,
-							rgba(126, 46, 187, 0.571) 0%,
-							rgba(246, 36, 236, 0.545) 100%
-						);
-						z-index: 14;
-					}
-				}
-			}
-
-			/* 	.a1 {
-				position: absolute;
-				width: 580px;
-				height: 500px;
-				bottom: 6vh;
-				right: 1vw;
-				border-radius: 62% 38% 35% 65% / 62% 57% 43% 38%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgba(126, 46, 187, 0.571) 0%,
-					rgba(246, 36, 236, 0.545) 100%
-				);
-				//filter: blur(60px);
-				z-index: 14;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			} */
-
-			.a2 {
-				position: absolute;
-				width: 580px;
-				height: 500px;
-				bottom: 6vh;
-				right: 1vw;
-				border-radius: 62% 38% 35% 65% / 62% 57% 43% 38%;
+			.background-color {
+				z-index: 2;
+				width: 30%;
+				height: 50%;
 				background-color: themed("a2");
-				filter: blur(60px);
-				z-index: 12;
-
-				@media (max-width: 1150px) {
-					display: none;
-				}
-			}
-
-			.a3 {
-				position: absolute;
-				width: 120px;
-				height: 120px;
-				bottom: 120px;
-				right: 500px;
 				border-radius: 50%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgb(249, 123, 27) 0%,
-					rgb(246, 180, 36) 100%
-				);
-				z-index: 15;
-			}
-
-			.a4 {
-				position: absolute;
-				width: 60px;
-				height: 60px;
-				bottom: 450px;
-				right: 500px;
-				border-radius: 50%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgba(243, 89, 28, 0.698) 0%,
-					rgba(246, 36, 155, 0.763) 100%
-				);
-				z-index: 15;
-
-				@media (max-width: 500px) {
-					width: 150px;
-					height: 150px;
-					left: 20px;
-				}
-			}
-
-			.a5 {
-				position: absolute;
-				width: 30px;
-				height: 30px;
-				bottom: 500px;
-				right: 65px;
-				border-radius: 50%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgba(243, 89, 28, 0.774) 0%,
-					rgba(231, 170, 204, 0.756) 100%
-				);
-				z-index: 15;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			}
-
-			.a6 {
-				position: absolute;
-				width: 50px;
-				height: 50px;
-				bottom: 550px;
-				right: 200px;
-				border-radius: 50%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgba(28, 236, 243, 0.733) 0%,
-					rgba(134, 76, 137, 0.887) 100%
-				);
-				z-index: 15;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			}
-
-			.a7 {
-				position: absolute;
-				width: 30px;
-				height: 30px;
-				bottom: 70px;
-				right: 600px;
-				border-radius: 50%;
-				background: rgb(127, 46, 187);
-				background: radial-gradient(
-					circle,
-					rgba(82, 243, 28, 0.733) 0%,
-					rgba(134, 76, 137, 0.887) 100%
-				);
-				z-index: 15;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			}
-
-			.b1-container {
-				display: flex;
-				align-items: center;
-				justify-content: space-around;
-				position: absolute;
-				width: 160px;
-				height: 50px;
-				bottom: 400px;
-				right: 550px;
-				z-index: 14;
-				border-radius: 10px;
-				background-color: themed("softBackground");
-
-				.b1-line-container {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					justify-content: center;
-					gap: 5px;
-
-					.line-1 {
-						width: 100px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(240, 62, 207, 0.635);
-					}
-
-					.line-2 {
-						width: 50px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(62, 240, 148, 0.79);
-					}
-				}
-
-				.b1 {
-					width: 40px;
-					height: 40px;
-					background: url("https://i.postimg.cc/HxZjCC4L/call.png");
-					background-size: cover;
-
-					@media (max-width: 500px) {
-						width: 350px;
-						height: 350px;
-					}
-				}
-			}
-
-			.b5-container {
-				display: flex;
-				align-items: center;
-				justify-content: space-around;
-				position: absolute;
-				width: 160px;
-				height: 50px;
-				bottom: 550px;
-				right: 350px;
-				z-index: 13;
-				border-radius: 10px;
-				background-color: themed("softBackground");
-
-				.b5-line-container {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					justify-content: center;
-					gap: 5px;
-
-					.line-4 {
-						width: 100px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(230, 86, 86, 0.635);
-					}
-
-					.line-5 {
-						width: 70px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(71, 240, 62, 0.79);
-					}
-				}
-
-				.b5 {
-					width: 40px;
-					height: 40px;
-					background: url("https://i.postimg.cc/X7mRzNmv/apparel.png");
-					background-size: cover;
-
-					@media (max-width: 500px) {
-						width: 350px;
-						height: 350px;
-					}
-				}
-			}
-
-			.b7-container {
-				display: flex;
-				align-items: center;
-				justify-content: space-around;
-				position: absolute;
-				width: 160px;
-				height: 50px;
-				bottom: 190px;
-				right: 10px;
-				z-index: 16;
-				border-radius: 10px;
-				background-color: themed("softBackground");
-
-				.b7-line-container {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					justify-content: center;
-					gap: 5px;
-
-					.line-7 {
-						width: 100px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(184, 240, 62, 0.635);
-					}
-
-					.line-8 {
-						width: 70px;
-						height: 10px;
-						border-radius: 10px;
-						background-color: rgba(62, 77, 240, 0.79);
-					}
-				}
-
-				.b7 {
-					width: 40px;
-					height: 40px;
-					background: url("https://i.postimg.cc/VLp1MWF5/shopping-cart.png");
-					background-size: cover;
-
-					@media (max-width: 500px) {
-						width: 350px;
-						height: 350px;
-					}
-				}
+				margin-bottom: 10px;
+				filter: blur(50px);
+				z-index: 50;
 			}
 		}
 	}
 }
-
-/* .b2 {
-				position: absolute;
-				width: 50px;
-				height: 50px;
-				bottom: 60vh;
-				right: 38vw;
-				background: url("https://i.postimg.cc/j29VHRPB/shopping-bag.png");
-				background-size: cover;
-				z-index: 16;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			} */
-
-/* 	.b4 {
-				position: absolute;
-				width: 60px;
-				height: 60px;
-				bottom: 65vh;
-				right: 46vw;
-				background: url("https://i.postimg.cc/5tGkKs6F/shopping-basket.png");
-				background-size: cover;
-				z-index: 16;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			} 
-
-		 .b3 {
-				position: absolute;
-				width: 80px;
-				height: 80px;
-				bottom: 60vh;
-				right: 1vw;
-				background: url("https://i.postimg.cc/Rhv8wNWP/shopping-cart-1.png");
-				background-size: cover;
-				z-index: 16;
-
-				@media (max-width: 500px) {
-					width: 350px;
-					height: 350px;
-				}
-			} */
-
-/* .c1 {
-				position: absolute;
-				width: 400px;
-				height: 500px;
-				bottom: 6vh;
-				left: -1vw;
-				border-radius: 62% 38% 35% 65% / 62% 57% 43% 38%;
-				background-color: themed("c1");
-				filter: blur(60px);
-				z-index: 12;
-			}
-
-			.c2 {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				bottom: 1vh;
-				left: 30vw;
-				border-radius: 62% 38% 35% 65% / 62% 57% 43% 38%;
-				background-color: themed("c2");
-				filter: blur(60px);
-				z-index: 12;
-			} */

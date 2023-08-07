@@ -3,6 +3,9 @@
 .home {
 	@include themify($themes) {
 		background-color: themed("background");
-		//height: 100vh;
+
+		.home-contaniner {
+			margin: 0 10%;
+		}
 	}
 }

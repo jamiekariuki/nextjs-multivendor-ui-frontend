@@ -1,4 +1,4 @@
-//import { Navbar } from "@/components/navbar/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 import "./globals.scss";
 import {
 	Poppins,
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
 		>
 			<body>
 				<ThemeProvider serverDarkMode={darkMode}>
-					{/* <Navbar /> */}
+					<Navbar />
 					<div>{children}</div>
 				</ThemeProvider>
 			</body>

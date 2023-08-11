@@ -11,7 +11,7 @@ import { SlMenu } from "react-icons/sl";
 import { SideBar } from "./side bar/side.bar";
 
 export const Navbar = () => {
-	const [user, setuser] = useState(!false);
+	const [user, setuser] = useState(false);
 
 	const [sideBar, setSideBar] = useState(false);
 

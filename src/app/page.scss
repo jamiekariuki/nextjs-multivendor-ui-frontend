@@ -5,7 +5,11 @@
 		background-color: themed("background");
 
 		.home-contaniner {
-			margin: 0 10%;
+			margin: 0 7%;
+
+			@media (max-width: 500px) {
+				margin: 10px;
+			}
 		}
 	}
 }

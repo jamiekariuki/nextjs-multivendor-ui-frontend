@@ -1,12 +1,11 @@
 import React from "react";
 import "./hero.content.scss";
-import { Mode } from "@/components/navbar/menu/dark mode/dark.mode";
+//import { Mode } from "@/components/navbar/menu/dark mode/dark.mode";
 import { TfiSearch } from "react-icons/tfi";
 
 export const HeroContent = () => {
 	return (
 		<div className="hero-content">
-			<Mode />
 			<div className="hero-content-container">
 				<div className="hero-title">
 					<h1>

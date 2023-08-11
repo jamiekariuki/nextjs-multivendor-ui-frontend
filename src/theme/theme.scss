@@ -5,7 +5,7 @@ $mainLight: #c353b0;
 //background
 //light mode
 $lightBackround: #fdfdfd;
-$softLightBackground: #cccccc;
+$softLightBackground: #ebebebb1;
 //dark mode
 $darkBackround: #151515;
 $softDarkBackground: #3d3d3d;
@@ -30,6 +30,7 @@ $darkBorder: rgba(173, 173, 173, 0.628); //will be used as hover too
 
 $themes: (
 	light: (
+		color: white,
 		paragraphColor: $pLight,
 		softParagraphColor: $pSoftLight,
 
@@ -38,7 +39,7 @@ $themes: (
 
 		background: $lightBackround,
 		softBackground: $softLightBackground,
-
+		verySoftBackground: rgba(238, 238, 238, 0.331),
 		border: $lightBorder,
 
 		icon: rgb(52, 52, 52),
@@ -50,6 +51,7 @@ $themes: (
 	),
 
 	dark: (
+		color: rgba(0, 0, 0, 0.234),
 		paragraphColor: $pDark,
 		softParagraphColor: $pSoftDark,
 
@@ -58,7 +60,7 @@ $themes: (
 
 		background: $darkBackround,
 		softBackground: $softDarkBackground,
-
+		verySoftBackground: rgba(18, 18, 18, 0.903),
 		border: $darkBorder,
 
 		icon: rgb(236, 236, 236),

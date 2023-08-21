@@ -48,7 +48,7 @@
 			position: absolute;
 			top: 45%;
 			right: -45px;
-			z-index: 100;
+			z-index: 10;
 
 			@media (max-width: 500px) {
 				right: 0;
@@ -59,7 +59,7 @@
 			position: absolute;
 			top: 45%;
 			left: -45px;
-			z-index: 100;
+			z-index: 10;
 
 			@media (max-width: 500px) {
 				left: 0;

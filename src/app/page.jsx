@@ -1,17 +1,17 @@
-import { PageContent } from "@/components/page components/home/page content/page.content";
+import MapTag from "@/components/page components/home/map tag/map.tag";
 import "./page.scss";
+/* import { PageContent } from "@/components/page components/home/page content/page.content";
 import { FreelancerSlider } from "@/components/page components/home/freelancers slider/freelancer.slider";
 import { EscroContent } from "@/components/page components/home/escro content/escro.content";
 import { Hero } from "@/components/page components/home/hero/hero";
 import { PaymentTag } from "@/components/page components/home/payment tag/payment.tag";
-import { ProductsSlider } from "@/components/page components/home/products slider/product.slider";
-
-import { Mode } from "@/components/navbar/menu/dark mode/dark.mode";
+import { ProductsSlider } from "@/components/page components/home/products slider/product.slider"; */
+//import { Mode } from "@/components/navbar/menu/dark mode/dark.mode";
 
 export default function Home() {
 	return (
 		<div className="home">
-			<Hero />
+			{/* <Hero />
 			<div className="home-contaniner">
 				<PaymentTag />
 			</div>
@@ -22,6 +22,10 @@ export default function Home() {
 			<PageContent />
 			<div className="home-contaniner">
 				<FreelancerSlider />
+			</div> */}
+
+			<div className="home-contaniner">
+				<MapTag />
 			</div>
 		</div>
 	);

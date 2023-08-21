@@ -1,11 +1,6 @@
-import { Navbar } from "@/components/navbar/navbar";
+//import { Navbar } from "@/components/navbar/navbar";
 import "./globals.scss";
-import {
-	Poppins,
-	Josefin_Sans,
-	Cormorant_Garamond,
-	Nunito_Sans,
-} from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/context/themeContext";
 import { cookies } from "next/headers";
 
@@ -13,27 +8,6 @@ const poppins = Poppins({
 	weight: ["300", "400", "500", "600"],
 	subsets: ["latin"],
 	variable: "--font-poppins",
-	display: "swap",
-});
-
-const josefin_Sans = Josefin_Sans({
-	weight: ["300"],
-	subsets: ["latin"],
-	variable: "--font-josefin",
-	display: "swap",
-});
-
-const cormorant_Garamond = Cormorant_Garamond({
-	weight: ["300"],
-	subsets: ["latin"],
-	variable: "--font-cormorant",
-	display: "swap",
-});
-
-const nunito_Sans = Nunito_Sans({
-	weight: ["200"],
-	subsets: ["latin"],
-	variable: "--font-nunito",
 	display: "swap",
 });
 
@@ -55,17 +29,10 @@ export default function RootLayout({ children }) {
 	}
 
 	return (
-		<html
-			lang="en"
-			className={`
-				${poppins.variable} 
-				${cormorant_Garamond.variable}  
-				${nunito_Sans.variable}  
-				${josefin_Sans.variable}`}
-		>
+		<html lang="en" className={`${poppins.variable} `}>
 			<body>
 				<ThemeProvider serverDarkMode={darkMode}>
-					<Navbar />
+					{/* <Navbar /> */}
 					<div>{children}</div>
 				</ThemeProvider>
 			</body>

@@ -1,8 +1,9 @@
-//import { Navbar } from "@/components/navbar/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 import "./globals.scss";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/context/themeContext";
 import { cookies } from "next/headers";
+//import Footer from "@/components/footer/footer";
 
 const poppins = Poppins({
 	weight: ["300", "400", "500", "600"],
@@ -32,8 +33,9 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={`${poppins.variable} `}>
 			<body>
 				<ThemeProvider serverDarkMode={darkMode}>
-					{/* <Navbar /> */}
+					<Navbar />
 					<div>{children}</div>
+					{/* <Footer /> */}
 				</ThemeProvider>
 			</body>
 		</html>

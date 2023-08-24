@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "./navbar.scss";
 import { useState } from "react";
 import { CartBadge, NotificationBadge, MessageBadge } from "./badge/badge";
 import { DropDown } from "./dropdown nav/dropdown";
-//import MainMenu from "./menu/menu";
 import { TfiSearch } from "react-icons/tfi";
 import { AccountSettings } from "./account settings/account.settings";
 import { SlMenu } from "react-icons/sl";
@@ -12,30 +11,55 @@ import { SideBar } from "./side bar/side.bar";
 
 export const Navbar = () => {
 	const [user, setuser] = useState(false);
+	const [navc, setNavc] = useState();
 
 	const [sideBar, setSideBar] = useState(false);
 
+	const handleSidebarToggle = () => {
+		setSideBar(!sideBar);
+	};
+
+	const handleUser = () => {
+		setuser(!user);
+	};
+
+	useEffect(() => {
+		function changebg() {
+			if (typeof window !== "undefined" && window.scrollY >= 200) {
+				setNavc(true);
+			} else {
+				setNavc(false);
+			}
+		}
+
+		if (typeof window !== "undefined") {
+			window.addEventListener("scroll", changebg);
+
+			return () => {
+				window.removeEventListener("scroll", changebg);
+			};
+		}
+	}, []);
+
 	return (
-		<nav>
-			<SideBar sideBar={sideBar} setSideBar={setSideBar} />
+		<nav className={!navc ? "show-bar" : ""}>
+			{
+				<SideBar
+					sideBar={sideBar}
+					handleSidebarToggle={handleSidebarToggle}
+				/>
+			}
 			<div
 				className={
 					sideBar
 						? "side-bar-background side-bar-background-open"
 						: "side-bar-background"
 				}
-				onClick={() => {
-					setSideBar(!sideBar);
-				}}
+				onClick={handleSidebarToggle}
 			/>
 			<div className="container">
 				<div className="left">
-					<div
-						className="mobile-nav"
-						onClick={() => {
-							setSideBar(!sideBar);
-						}}
-					>
+					<div className="mobile-nav" onClick={handleSidebarToggle}>
 						<SlMenu className="menu-icon" />
 					</div>
 					<div className="logo">
@@ -44,7 +68,7 @@ export const Navbar = () => {
 					<div className="nav-links"></div>
 				</div>
 				<div className="middle">
-					<div className="search">
+					<div className={!navc ? "hide-search" : "search"}>
 						<input
 							type="text"
 							className="search__input"
@@ -59,15 +83,6 @@ export const Navbar = () => {
 					<CartBadge />
 
 					{user ? (
-						<div className="user-links">
-							<button className="login">
-								<p>login</p>
-							</button>
-							<button className="signup">
-								<p>sign up</p>
-							</button>
-						</div>
-					) : (
 						<div className="profile-container">
 							<div className="badges">
 								<MessageBadge />
@@ -75,14 +90,34 @@ export const Navbar = () => {
 							<div className="badges">
 								<NotificationBadge />
 							</div>
-							<AccountSettings />
+
+							<AccountSettings
+								user={user}
+								handleUser={handleUser}
+							/>
+						</div>
+					) : (
+						<div className="user-links">
+							<button className="login">
+								<p>login</p>
+							</button>
+							<button className="signup" onClick={handleUser}>
+								<p>sign up</p>
+							</button>
+
+							<div className="account-setting-nav">
+								<AccountSettings
+									user={user}
+									handleUser={handleUser}
+								/>
+							</div>
 						</div>
 					)}
-
-					{/* <MainMenu /> */}
 				</div>
 			</div>
-			<DropDown />
+			<div className={!navc ? "hide-dropdown" : ""}>
+				<DropDown />
+			</div>
 		</nav>
 	);
 };

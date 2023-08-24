@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children, serverDarkMode }) => {
 
 	useEffect(() => {
 		setDarkMode(initialDarkMode);
-		// Once the client-side JavaScript loads, update the class name
+		
 		document.addEventListener("DOMContentLoaded", () => {
 			const body = document.querySelector("body");
 			body.classList.remove(`theme-${serverDarkMode ? "dark" : "light"}`);

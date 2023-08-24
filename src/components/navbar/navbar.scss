@@ -3,14 +3,25 @@
 nav {
 	@include themify($themes) {
 		background-color: themed("background");
-		background-color: transparent;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		z-index: 100;
-		position: absolute;
 		top: 0;
 		width: 100%;
+		position: fixed;
+		border-bottom: 0.5px solid themed("border2");
+
+		//transition: all ease-in-out 0.5s;
+
+		@media (max-width: 650px) {
+			height: 45px;
+		}
+
+		&.show-bar {
+			position: absolute;
+			border: none;
+		}
 
 		.side-bar-background {
 			position: fixed;
@@ -73,6 +84,10 @@ nav {
 				}
 			}
 			.middle {
+				.hide-search {
+					display: none;
+				}
+
 				.search {
 					display: flex;
 					align-items: center;
@@ -90,7 +105,6 @@ nav {
 						height: 30px;
 						padding: 0.7rem 1rem;
 						width: 12em;
-						transition: all ease-in-out 0.5s;
 						margin-right: -2rem;
 						padding-right: 39px;
 
@@ -147,21 +161,25 @@ nav {
 				gap: 30px;
 
 				@media (max-width: 500px) {
-					gap: 2px;
+					gap: 15px;
 				}
 
 				.user-links {
 					display: flex;
-					gap: 15px;
+					gap: 10px;
 
 					button {
 						width: 60px;
 						height: 28px;
 						cursor: pointer;
+
+						@media (max-width: 500px) {
+							width: 55px;
+							height: 26px;
+						}
 					}
 
 					.p {
-						font-family: sans-serif;
 						font-weight: 700;
 					}
 
@@ -169,11 +187,29 @@ nav {
 						background-color: transparent;
 						border: none;
 						transition: all 0.2s;
-						border: 1px solid transparent;
 						border-radius: 5px;
 
+						p {
+							color: themed("paragraphColor");
+							font-size: 12px;
+						}
+
 						&:hover {
-							border: 1px solid themed("border");
+							background-color: themed("hover");
+						}
+
+						@media (max-width: 650px) {
+							border-radius: 5px;
+							background-color: $main;
+
+							p {
+								color: rgb(255, 255, 255);
+								font-size: 12px;
+							}
+
+							&:active {
+								background-color: $mainLight;
+							}
 						}
 					}
 
@@ -182,10 +218,24 @@ nav {
 						border-radius: 5px;
 						background-color: $main;
 						transition: 0.2s;
-						color: rgb(227, 227, 227);
+						color: rgb(255, 255, 255);
+
+						@media (max-width: 650px) {
+							display: none;
+						}
+
+						p {
+							font-size: 12px;
+						}
 
 						&:hover {
 							background-color: $mainLight;
+						}
+					}
+
+					.account-setting-nav {
+						@media (max-width: 650px) {
+							display: none;
 						}
 					}
 				}
@@ -193,7 +243,7 @@ nav {
 				.profile-container {
 					display: flex;
 					align-items: center;
-					gap: 10px;
+					gap: 12px;
 
 					.badges {
 						@media (max-width: 500px) {
@@ -202,6 +252,9 @@ nav {
 					}
 				}
 			}
+		}
+		.hide-dropdown {
+			display: none;
 		}
 	}
 }

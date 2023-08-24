@@ -27,11 +27,13 @@
 .arrow {
 	@include themify($themes) {
 		cursor: pointer;
+		z-index: 10;
 
 		.arrow-icon {
 			font-size: 35px;
 			color: themed("icon");
 			transition: all 0.2s;
+			z-index: 10;
 
 			&:hover {
 				color: themed("shadow");
@@ -48,7 +50,6 @@
 			position: absolute;
 			top: 45%;
 			right: -45px;
-			z-index: 10;
 
 			@media (max-width: 500px) {
 				right: 0;
@@ -59,7 +60,6 @@
 			position: absolute;
 			top: 45%;
 			left: -45px;
-			z-index: 10;
 
 			@media (max-width: 500px) {
 				left: 0;

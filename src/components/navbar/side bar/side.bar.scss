@@ -9,7 +9,8 @@
 		bottom: 0;
 		z-index: 1100;
 		background-color: themed("background");
-		overflow-y: scroll;
+		transition: all 0.3;
+
 		transition: all 0.3s;
 
 		@media (min-width: 600px) {
@@ -21,11 +22,41 @@
 			right: 20%;
 		}
 
+		.side-bar-title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: absolute;
+			top: 0;
+			left: 0px;
+			right: 0px;
+			height: 9vh;
+			background-color: $mainLight;
+			padding: 10px;
+			z-index: 1000;
+
+			.side-bar-logo {
+				h1 {
+					color: themed("titleColor");
+					font-family: sans-serif;
+				}
+			}
+
+			.side-bar-toggle {
+				.close-icon {
+					font-size: 30px;
+					color: themed("icon");
+				}
+			}
+		}
+
 		.side-bar-wrapper {
+			margin-top: 10vw;
 			height: 100%;
 			width: 100%;
 			padding: 13px;
 			position: relative;
+			overflow-y: scroll;
 
 			h6 {
 				font-size: 16px;
@@ -33,29 +64,7 @@
 				font-weight: 500;
 			}
 
-			.side-bar-title {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				position: absolute;
-				top: 0;
-				left: 0px;
-				right: 0px;
-				height: 9vh;
-				background-color: $main;
-				padding: 10px;
-
-				.side-bar-logo {
-					h1 {
-						color: themed("titleColor");
-						font-family: sans-serif;
-					}
-				}
-			}
-
 			.side-bar-user-wrapper {
-				margin-top: 50px;
-
 				.side-bar-user-links {
 					display: flex;
 					flex-direction: column;

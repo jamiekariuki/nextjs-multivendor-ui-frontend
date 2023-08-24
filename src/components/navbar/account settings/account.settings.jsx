@@ -1,22 +1,12 @@
 "use client";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Avatar from "@mui/material/Avatar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import Settings from "@mui/icons-material/Settings";
-import Logout from "@mui/icons-material/Logout";
 import "./account.settings.scss";
 import Image from "next/image";
-import { Mode } from "../menu/dark mode/dark.mode";
 import { AccountNav } from "./account nav/account.nav";
 import { useState } from "react";
+import { LuMoreVertical } from "react-icons/lu";
 
-export const AccountSettings = () => {
+export const AccountSettings = ({ user, handleUser }) => {
 	const [settings, setSettings] = useState(false);
 	const [nav, setNav] = useState(false);
 
@@ -43,13 +33,28 @@ export const AccountSettings = () => {
 				}
 				onClick={closeModal}
 			/>
-			<div className="profile-container" onClick={openModal}>
-				<Image
-					src="https://i.postimg.cc/VLT3vYV3/profile.jpg"
-					fill={true}
-					alt="avatar"
-					className="profile"
-				/>
+			<div
+				className={
+					user
+						? "profile-container"
+						: "profile-container profile-container-no-user"
+				}
+				onClick={openModal}
+			>
+				{user ? (
+					<>
+						<Image
+							src="https://i.postimg.cc/VLT3vYV3/profile.jpg"
+							fill={true}
+							alt="avatar"
+							className="profile"
+						/>
+					</>
+				) : (
+					<>
+						<LuMoreVertical className="settings-icon" />
+					</>
+				)}
 
 				<div
 					onClick={closeModal}
@@ -59,7 +64,7 @@ export const AccountSettings = () => {
 							: "settings-modal"
 					}
 				>
-					{nav && <AccountNav />}
+					{nav && <AccountNav user={user} handleUser={handleUser} />}
 				</div>
 			</div>
 		</div>

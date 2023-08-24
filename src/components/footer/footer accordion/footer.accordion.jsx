@@ -4,10 +4,11 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import "./accordion.scss";
-import { dropDownData } from "../../dropdown nav/dropdown.data";
+import "./footer.accordion.scss";
+import Link from "next/link";
+import Image from "next/image";
 
-export const Platform = ({ handleSidebarToggle }) => {
+export const FooterAccordion = ({ footerData }) => {
 	const [expanded, setExpanded] = React.useState(false);
 
 	const handleChange = (panel) => (event, isExpanded) => {
@@ -15,8 +16,8 @@ export const Platform = ({ handleSidebarToggle }) => {
 	};
 
 	return (
-		<div className="side-bar-accordion">
-			{dropDownData.map((item) => (
+		<div className="footer-accordion">
+			{footerData.map((item) => (
 				<Accordion
 					key={item.title}
 					expanded={expanded === `panel${item.title}`}
@@ -32,7 +33,6 @@ export const Platform = ({ handleSidebarToggle }) => {
 						}`}
 					>
 						<div className="accordion-title-wrapper">
-							<item.icon className="accordion-icons" />
 							<h5 className="item-title">{item.title}</h5>
 						</div>
 					</AccordionSummary>
@@ -40,14 +40,11 @@ export const Platform = ({ handleSidebarToggle }) => {
 						<ul>
 							{item.list.map((listItem) => (
 								<li key={listItem.title}>
-									{/* <a href={listItem.link}> */}
-									<div
-										className="list-wrapper"
-										onClick={handleSidebarToggle}
-									>
-										<p>{listItem.title}</p>
-									</div>
-									{/* </a> */}
+									<Link href={listItem.url}>
+										<div className="list-wrapper">
+											<p>{listItem.name}</p>
+										</div>
+									</Link>
 								</li>
 							))}
 						</ul>

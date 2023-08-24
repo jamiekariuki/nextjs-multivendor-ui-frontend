@@ -4,7 +4,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import "./dark.mode.scss";
 import { ThemeContext } from "@/context/themeContext";
 
-export const Mode = () => {
+export const DarkMode = () => {
 	const { toggle, darkMode } = useContext(ThemeContext);
 
 	return (

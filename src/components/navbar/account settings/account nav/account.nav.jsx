@@ -29,12 +29,7 @@ export const AccountNav = ({ user, handleUser }) => {
 			{user && (
 				<>
 					<div className="side-bar-profile">
-						<div
-							className="profile-links"
-							onClick={() => {
-								onClick = { handleUser };
-							}}
-						>
+						<div className="profile-links" onClick={handleUser}>
 							<div className="avatar-container">
 								<Image
 									src="https://i.postimg.cc/VLT3vYV3/profile.jpg"

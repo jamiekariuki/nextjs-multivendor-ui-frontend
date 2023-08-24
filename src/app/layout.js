@@ -3,7 +3,7 @@ import "./globals.scss";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/context/themeContext";
 import { cookies } from "next/headers";
-//import Footer from "@/components/footer/footer";
+import Footer from "@/components/footer/footer";
 
 const poppins = Poppins({
 	weight: ["300", "400", "500", "600"],
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
 				<ThemeProvider serverDarkMode={darkMode}>
 					<Navbar />
 					<div>{children}</div>
-					{/* <Footer /> */}
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

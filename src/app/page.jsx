@@ -11,7 +11,6 @@ export default function Home() {
 	return (
 		<div className="home">
 			<Hero />
-
 			<div className="home-contaniner">
 				<PaymentTag />
 			</div>
@@ -23,10 +22,6 @@ export default function Home() {
 			<div className="home-contaniner">
 				<FreelancerSlider />
 			</div>
-			<Hero />
-			<EscroContent />
-			<PageContent />
-
 			<div className="home-contaniner">
 				<MapTag />
 			</div>

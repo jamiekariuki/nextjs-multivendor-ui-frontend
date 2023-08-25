@@ -17,15 +17,6 @@
 			font-family: sans-serif;
 			font-weight: 500;
 		}
-
-		@media (max-width: 600px) {
-			gap: 18px;
-			justify-content: flex-start;
-
-			.dark-icon {
-				font-size: 20px;
-			}
-		}
 	}
 
 	.light {
@@ -42,15 +33,6 @@
 			font-size: 16px;
 			font-family: sans-serif;
 			font-weight: 500;
-		}
-
-		@media (max-width: 600px) {
-			gap: 18px;
-			justify-content: flex-start;
-
-			.light-icon {
-				font-size: 20px;
-			}
 		}
 	}
 }

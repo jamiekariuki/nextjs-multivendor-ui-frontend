@@ -52,6 +52,7 @@
 
 		.side-bar-wrapper {
 			margin-top: 10vh;
+			padding-bottom: 15vh;
 			height: 100%;
 			width: 100%;
 			padding: 13px;
@@ -237,7 +238,16 @@
 					}
 
 					.side-bar-icon {
+						font-size: 18px;
 						color: themed("icon");
+					}
+
+					.dark-icon {
+						color: rgb(59, 62, 93);
+					}
+
+					.light-icon {
+						color: rgb(255, 224, 21);
 					}
 				}
 			}

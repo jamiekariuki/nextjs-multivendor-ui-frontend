@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./side.bar.scss";
 import {
 	MessageBadge,
@@ -15,9 +15,13 @@ import { RiLogoutBoxLine } from "react-icons/ri";
 import { BsArrowLeftCircle } from "react-icons/bs";
 import UserSideBar from "./user side bar/user.side.bar";
 import { PageNav } from "./page nav/page.nav";
-import { DarkMode } from "../dark mode/dark.mode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import { ThemeContext } from "@/context/themeContext";
 
 export const SideBar = ({ sideBar, handleSidebarToggle }) => {
+	const { toggle, darkMode } = useContext(ThemeContext);
+
 	const [user, setuser] = useState(false);
 	const [page, setpage] = useState(false);
 
@@ -136,7 +140,17 @@ export const SideBar = ({ sideBar, handleSidebarToggle }) => {
 						<h6>Settings</h6>
 					</button>
 
-					<DarkMode />
+					{!darkMode ? (
+						<button className="general-links " onClick={toggle}>
+							<DarkModeIcon className="side-bar-icon dark-icon" />
+							<h6>Dark mode</h6>
+						</button>
+					) : (
+						<button className="general-links " onClick={toggle}>
+							<LightModeIcon className="side-bar-icon light-icon" />
+							<h6>light mode</h6>
+						</button>
+					)}
 
 					<button
 						className="general-links"

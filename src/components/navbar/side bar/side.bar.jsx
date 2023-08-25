@@ -62,7 +62,9 @@ export const SideBar = ({ sideBar, handleSidebarToggle }) => {
 							>
 								<h6>Sign up</h6>
 							</div>
-							<PageNav />
+							<PageNav
+								handleSidebarToggle={handleSidebarToggle}
+							/>
 						</div>
 					) : (
 						<div className="side-bar-profile">
@@ -79,34 +81,34 @@ export const SideBar = ({ sideBar, handleSidebarToggle }) => {
 
 							<div className="divider"></div>
 
-							<div
+							<button
 								className="profile-links"
 								onClick={handleSidebarToggle}
 							>
 								<NotificationBadge />
 								<h6>Notifications</h6>
-							</div>
-							<div
+							</button>
+							<button
 								className="profile-links"
 								onClick={handleSidebarToggle}
 							>
 								<MessageBadge />
 								<h6>Messages</h6>
-							</div>
-							<div
+							</button>
+							<button
 								className="profile-links"
 								onClick={handleSidebarToggle}
 							>
 								<OrderBadge />
 								<h6>Oders</h6>
-							</div>
-							<div
+							</button>
+							<button
 								className="profile-links"
 								onClick={handleSidebarToggle}
 							>
 								<EscrowBadge />
 								<h6>Escrow</h6>
-							</div>
+							</button>
 						</div>
 					)}
 				</div>
@@ -126,39 +128,39 @@ export const SideBar = ({ sideBar, handleSidebarToggle }) => {
 				</div>
 
 				<div className="side-bar-general">
-					<div
+					<button
 						className="general-links"
 						onClick={handleSidebarToggle}
 					>
 						<IoSettingsSharp className="side-bar-icon" />
 						<h6>Settings</h6>
-					</div>
+					</button>
 
 					<DarkMode />
 
-					<div
+					<button
 						className="general-links"
 						onClick={handleSidebarToggle}
 					>
 						<LuHelpCircle className="side-bar-icon" />
 						<h6>Help</h6>
-					</div>
+					</button>
 
-					<div
+					<button
 						className="general-links"
 						onClick={handleSidebarToggle}
 					>
 						<BiSolidMessageDetail className="side-bar-icon" />
 						<h6>Contact us</h6>
-					</div>
+					</button>
 
-					<div
+					<button
 						className="general-links"
 						onClick={handleSidebarToggle}
 					>
 						<RiLogoutBoxLine className="side-bar-icon" />
 						<h6>Log out</h6>
-					</div>
+					</button>
 				</div>
 			</div>
 		</div>

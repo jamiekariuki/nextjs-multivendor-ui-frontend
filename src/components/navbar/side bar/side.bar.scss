@@ -51,7 +51,7 @@
 		}
 
 		.side-bar-wrapper {
-			margin-top: 11vw;
+			margin-top: 10vh;
 			height: 100%;
 			width: 100%;
 			padding: 13px;
@@ -88,6 +88,9 @@
 					gap: 7px;
 
 					.profile-links {
+						background-color: transparent;
+						border: none;
+						width: 100%;
 						display: flex;
 						align-items: center;
 						justify-content: flex-start;
@@ -209,6 +212,9 @@
 				padding-bottom: 50px;
 
 				.general-links {
+					background-color: transparent;
+					border: none;
+					width: 100%;
 					display: flex;
 					align-items: center;
 					justify-content: flex-start;

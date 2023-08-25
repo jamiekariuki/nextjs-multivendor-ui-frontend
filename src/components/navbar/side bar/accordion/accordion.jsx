@@ -45,7 +45,9 @@ export const Platform = ({ handleSidebarToggle }) => {
 										className="list-wrapper"
 										onClick={handleSidebarToggle}
 									>
-										<p>{listItem.title}</p>
+										<button>
+											<p>{listItem.title}</p>
+										</button>
 									</div>
 									{/* </a> */}
 								</li>

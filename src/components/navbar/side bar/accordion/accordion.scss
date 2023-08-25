@@ -58,11 +58,17 @@
 						&:active {
 							background-color: themed("border");
 						}
+						button {
+							border: none;
+							background-color: transparent;
+							width: 100%;
+							height: 100%;
 
-						p {
-							font-family: sans-serif;
-							font-size: 13px;
-							color: themed("softParagraphColor");
+							p {
+								font-family: sans-serif;
+								font-size: 13px;
+								color: themed("softParagraphColor");
+							}
 						}
 					}
 				}

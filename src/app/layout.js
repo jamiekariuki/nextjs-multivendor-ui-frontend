@@ -1,8 +1,8 @@
-import { Navbar } from "@/components/navbar/navbar";
 import "./globals.scss";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/context/themeContext";
 import { cookies } from "next/headers";
+import { Navbar } from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 
 const poppins = Poppins({

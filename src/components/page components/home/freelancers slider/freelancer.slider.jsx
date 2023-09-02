@@ -20,14 +20,16 @@ export const FreelancerSlider = () => {
 								className="profile-card-container"
 							>
 								<div className="profile-wrapper">
-									<div className="card-image-container">
-										<Image
-											src={data.profile}
-											alt="avatar"
-											fill={true}
-											className="freelancer-avatar"
-										/>
-									</div>
+									<Link href="/freelancer">
+										<div className="card-image-container">
+											<Image
+												src={data.profile}
+												alt="avatar"
+												fill={true}
+												className="freelancer-avatar"
+											/>
+										</div>
+									</Link>
 
 									<div className="username">
 										<h6>{data.name}</h6>

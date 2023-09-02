@@ -1,4 +1,4 @@
-@import "../theme/theme.scss";
+@import "./../theme/theme.scss";
 
 * {
 	box-sizing: border-box;
@@ -8,8 +8,25 @@
 
 html,
 body {
-	max-width: 100vw;
-	//	overflow-x: hidden;
+	--sb-track-color: #e4e4e400;
+	--sb-thumb-color: #b12f9c;
+	--sb-size: 10px;
+
+	scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 10px;
 }
 
 a {
@@ -31,25 +48,12 @@ ul li {
 	color: black;
 }
 
-h1 {
-	font-family: var(--font-poppins);
-}
-
-h2 {
-	font-family: var(--font-poppins);
-}
-h3 {
-	font-family: var(--font-poppins);
-}
-h4 {
-	font-family: var(--font-poppins);
-}
-h5 {
-	font-family: var(--font-poppins);
-}
-h6 {
-	font-family: var(--font-poppins);
-}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
 	font-family: var(--font-poppins);
 }

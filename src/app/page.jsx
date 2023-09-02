@@ -1,5 +1,5 @@
-import MapTag from "@/components/page components/home/map tag/map.tag";
 import "./page.scss";
+import MapTag from "@/components/page components/home/map tag/map.tag";
 import { PageContent } from "@/components/page components/home/page content/page.content";
 import { FreelancerSlider } from "@/components/page components/home/freelancers slider/freelancer.slider";
 import { EscroContent } from "@/components/page components/home/escro content/escro.content";
@@ -10,6 +10,7 @@ import { ProductsSlider } from "@/components/page components/home/products slide
 export default function Home() {
 	return (
 		<div className="home">
+			home
 			<Hero />
 			<div className="home-contaniner">
 				<PaymentTag />

@@ -5,11 +5,12 @@ import "./freelancer.scss";
 
 const FreelancerLayout = ({ children }) => {
 	return (
-		<section>
+		<>
 			<FreelancerCoverPhoto />
 			<FreelancerProfile />
-			{children}
-		</section>
+
+			<div>{children}</div>
+		</>
 	);
 };
 

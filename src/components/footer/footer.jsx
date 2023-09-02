@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./footer.scss";
 import { ImFacebook2 } from "react-icons/im";
@@ -9,6 +10,7 @@ import { FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { FooterAccordion } from "./footer accordion/footer.accordion";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
 	const currentYear = 2023;
@@ -83,95 +85,99 @@ const Footer = () => {
 
 	const footerData = [...footerLinks, ...footerLinksPlatforms];
 
-	return (
-		<div className="footer">
-			<div className="footer-links">
-				<div className="footer-app">
-					<div className="app-wrapper">
-						<div className="download-links">
-							<h6>Download App</h6>
-							<div className="store-contaner">
-								<div className="store-wrapper">
-									<Image
-										src="https://i.postimg.cc/PrBbtbmq/playstore.png"
-										fill={true}
-										alt="playstore logo"
-										className="store"
-									/>
-								</div>
+	const pathname = usePathname();
 
-								<div className="store-wrapper">
-									<Image
-										src="https://i.postimg.cc/9QL7DG9T/appstore.png"
-										fill={true}
-										alt="playstore logo"
-										className="store"
-									/>
+	if (pathname === "/") {
+		return (
+			<div className="footer">
+				<div className="footer-links">
+					<div className="footer-app">
+						<div className="app-wrapper">
+							<div className="download-links">
+								<h6>Download App</h6>
+								<div className="store-contaner">
+									<div className="store-wrapper">
+										<Image
+											src="https://i.postimg.cc/PrBbtbmq/playstore.png"
+											fill={true}
+											alt="playstore logo"
+											className="store"
+										/>
+									</div>
+
+									<div className="store-wrapper">
+										<Image
+											src="https://i.postimg.cc/9QL7DG9T/appstore.png"
+											fill={true}
+											alt="playstore logo"
+											className="store"
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div className="social-links-wrapper">
+								<h6>Social</h6>
+								<div className="social-links">
+									<ImFacebook2 className="social-icon" />
+									<GrTwitter className="social-icon" />
+									<FaInstagram className="social-icon" />
+									<BsYoutube className="social-icon" />
+									<AiFillLinkedin className="social-icon" />
+									<FaTiktok className="social-icon" />
 								</div>
 							</div>
 						</div>
-
-						<div className="social-links-wrapper">
-							<h6>Social</h6>
-							<div className="social-links">
-								<ImFacebook2 className="social-icon" />
-								<GrTwitter className="social-icon" />
-								<FaInstagram className="social-icon" />
-								<BsYoutube className="social-icon" />
-								<AiFillLinkedin className="social-icon" />
-								<FaTiktok className="social-icon" />
-							</div>
-						</div>
 					</div>
-				</div>
 
-				{footerLinks.map((item, index) => (
-					<div
-						key={index}
-						className={`list-wrapper-${item.title} list-wrapper`}
-					>
-						<h5>{item.title}</h5>
-						<ul>
-							{item.list.map((subItem, subIndex) => (
-								<li key={subIndex}>
-									<Link href={subItem.url}>
-										<h6>{subItem.name}</h6>
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
-				))}
-
-				<div className="footer-platforms">
-					<h5>Platforms</h5>
-
-					{footerLinksPlatforms.map((item, index) => (
-						<div key={index}>
-							<h6>{item.title}</h6>
+					{footerLinks.map((item, index) => (
+						<div
+							key={index}
+							className={`list-wrapper-${item.title} list-wrapper`}
+						>
+							<h5>{item.title}</h5>
 							<ul>
 								{item.list.map((subItem, subIndex) => (
 									<li key={subIndex}>
 										<Link href={subItem.url}>
-											<p>{subItem.name}</p>
+											<h6>{subItem.name}</h6>
 										</Link>
 									</li>
 								))}
 							</ul>
 						</div>
 					))}
+
+					<div className="footer-platforms">
+						<h5>Platforms</h5>
+
+						{footerLinksPlatforms.map((item, index) => (
+							<div key={index}>
+								<h6>{item.title}</h6>
+								<ul>
+									{item.list.map((subItem, subIndex) => (
+										<li key={subIndex}>
+											<Link href={subItem.url}>
+												<p>{subItem.name}</p>
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+
+					<div className="footer-mobile">
+						<FooterAccordion footerData={footerData} />
+					</div>
 				</div>
 
-				<div className="footer-mobile">
-					<FooterAccordion footerData={footerData} />
+				<div className="copyright-container">
+					<p>&copy; {currentYear} Mart. All rights reserved.</p>
 				</div>
 			</div>
-
-			<div className="copyright-container">
-				<p>&copy; {currentYear} Mart. All rights reserved.</p>
-			</div>
-		</div>
-	);
+		);
+	}
 };
 
 export default Footer;

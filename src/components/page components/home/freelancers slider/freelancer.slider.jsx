@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CardSlider } from "@/styled components/sliders/slider";
 import { freelancers } from "./freelancers.data";
 import { MdVerified } from "react-icons/md";
+import Link from "next/link";
 
 export const FreelancerSlider = () => {
 	return (

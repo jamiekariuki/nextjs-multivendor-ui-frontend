@@ -53,7 +53,9 @@ const Gigs = () => {
 
 				<div className="gigs-post-container">
 					{products.map((data) => (
-						<GigsCard data={data} />
+						<div key={data.id}>
+							<GigsCard data={data} />
+						</div>
 					))}
 				</div>
 			</div>

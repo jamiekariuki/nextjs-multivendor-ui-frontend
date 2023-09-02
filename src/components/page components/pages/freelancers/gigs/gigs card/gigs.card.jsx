@@ -6,7 +6,7 @@ import { PiHeartLight } from "react-icons/pi";
 
 const GigsCard = ({ data }) => {
 	return (
-		<div key={data.id} className="card-container">
+		<div className="card-container">
 			<div className="card-image-container">
 				<Image
 					src={data.image}
